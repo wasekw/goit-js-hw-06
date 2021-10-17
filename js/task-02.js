@@ -6,6 +6,9 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
+
+const list = document.querySelector("#ingredients");
+
 const firstItem = document.createElement("li");
 firstItem.textContent = ingredients[0];
 firstItem.classList.add("item");
@@ -24,7 +27,7 @@ fifthItem.classList.add("item");
 const sixthItem = document.createElement("li");
 sixthItem.textContent = ingredients[5];
 sixthItem.classList.add("item");
-const list = document.querySelector("#ingredients");
+
 list.prepend(
   firstItem,
   secondItem,

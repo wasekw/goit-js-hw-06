@@ -1,11 +1,18 @@
-// document.addEventListener("keydown", (event) => {
-//   console.log("Keydown: ", event);
-// });
+const $btnDecrement = document.querySelector('button[data-action="decrement"]');
+const $btnIncrement = document.querySelector('button[data-action="increment"]');
+let counterValue = document.querySelector("#value");
 
-// document.addEventListener("keyup", (event) => {
-//   console.log("Keyup: ", event);
-// });
-document.addEventListener("keydown", (event) => {
-  // console.log("key: ", event.key);
-  console.log("code: ", event.code);
-});
+let currentValue = counterValue.textContent;
+
+function decrement() {
+  --currentValue;
+  counterValue.textContent = currentValue;
+}
+
+function increment() {
+  ++currentValue;
+  counterValue.textContent = currentValue;
+}
+
+$btnDecrement.addEventListener("click", decrement);
+$btnIncrement.addEventListener("click", increment);
