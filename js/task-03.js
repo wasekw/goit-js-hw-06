@@ -15,10 +15,23 @@ const images = [
 
 const galleryEl = document.querySelector(".gallery");
 
-const makeImageInGallery = ({ url, alt }) => {
-  return `<li class="gallery-item"><img class="gallery--image" src="${url}, alt="${alt}"/></li>`;
-};
+// const makeImageInGallery = ({ url, alt }) => {
+//   return `<li class="gallery-item"><img class="gallery--image" src="${url}" alt="${alt}"/></li>`;
+// };
 
-const insetImageInGallery = images.map(makeImageInGallery).join(" ");
-galleryEl.insertAdjacentHTML("afterbegin", insetImageInGallery);
-console.log(insetImageInGallery);
+// const insetImageInGallery = images.map(makeImageInGallery).join("");
+// galleryEl.insertAdjacentHTML("afterbegin", insetImageInGallery);
+// console.log(insetImageInGallery);
+
+const makeImageInGallery = ({ url, alt }) => {
+  const makeItem = document.createElement("li");
+  makeItem.insertAdjacentHTML(
+    "beforeend",
+    `<img class='gallery--image' src='${url}' alt='${alt}'/>`
+  );
+  makeItem.classList.add("gallery-item");
+  return makeItem;
+};
+const insetImageInGallery = images.map(makeImageInGallery);
+
+galleryEl.append(...insetImageInGallery);
