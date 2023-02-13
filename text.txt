@@ -9,3 +9,76 @@ elem.previousSibling - вибере елемент «зліва» від elem (�
 elem.previousElementSibling - вибере вузол-елемент «зліва» від elem (його попереднього сусіда).
 elem.nextSibling - вибере елемент «праворуч» від elem (його наступного сусіда)
 elem.nextElementSibling - вибере вузол-елемент «праворуч» від elem (його наступного сусіда).
+
+//========================================================
+element.querySelector(selector);
+element.querySelectorAll(selector);
+
+value - містить поточний текстовий контент елементів форм.
+checked - зберігає стан чекбокса або радіокнопки.
+name - зберігає значення, вказане в HTML-атрибуті name.
+src - шлях до зображення тегу <img>
+
+//===================================================
+const message = document.querySelector("#message");
+console.log(message.value); // Default textarea message
+
+//===================================================
+const activeLink = document.querySelector(".btn.active");
+console.log(activeLink.href); // https://s.codepen.io/about
+
+//===================================================
+const image = document.querySelector(".image");
+console.log(image.src); // https://placeimg.com/640/480/animals
+image.src = 'https://placeimg.com/640/480/tech';
+
+elem.textContent повертає текстовий контент всередині елемента.
+
+У властивості classList зберігається об'єкт з методами для роботи з класами елемента.
+
+elem.classList.contains(cls) - повертає true або false, залежно від наявності класу cls в елемента.
+elem.classList.add(cls) - додає клас cls до списку класів елемента.
+elem.classList.remove(cls) - видаляє клас cls зі списку класів елемента.
+elem.classList.toggle(cls) - якщо відсутній клас cls, то додає його, якщо - присутній, навпаки - видаляє.
+elem.classList.replace(oldClass, newClass) - замінює існуючий клас oldClass на вказаний newClass.
+
+//=====================================================================
+
+style - для читання та зміни інлайнових стилів.
+
+const button = document.querySelector(".btn");
+
+button.style.backgroundColor = "teal";
+button.style.fontSize = "24px";
+button.style.textAlign = "center";
+
+console.log(button.style); // inline styles object
+
+//====================================================================
+elem.hasAttribute(name) - перевіряє наявність атрибута, повертає true або false.
+elem.getAttribute(name) - отримує значення атрибута і повертає його.
+elem.setAttribute(name, value) - встановлює атрибут.
+elem.removeAttribute(name) - видаляє атрибут.
+elem.attributes - властивість, що повертає об'єкт усіх атрибутів елемента.
+
+//=================================================================
+
+document.createElement(tagName);
+
+const heading = document.createElement("h1");
+console.log(heading); // <h1></h1>
+
+heading.textContent = "This is a heading";
+console.log(heading); // <h1>This is a heading</h1>
+
+const image = document.createElement("img");
+image.src = "https://placeimg.com/640/480/nature";
+image.alt = "Nature";
+console.log(image); // <img src="https://placeimg.com/640/480/nature" alt="Nature" />
+
+element.append(el1, el2, ...) - додає один або декілька елементів після всіх дітей елемента element.
+element.prepend(el1, el2, ...) - додає один або декілька елементів перед усіма дітьми елемента element.
+element.after(el1, el2, ...) - додає один або декілька елементів після елемента element.
+element.before(el1, el2, ...) - додає один або декілька елементів перед елементом element
+
+elem.remove() - Він викликається на елементі elem, який необхідно видалити;
