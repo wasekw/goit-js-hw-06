@@ -82,3 +82,28 @@ element.after(el1, el2, ...) - додає один або декілька ел�
 element.before(el1, el2, ...) - додає один або декілька елементів перед елементом element
 
 elem.remove() - Він викликається на елементі elem, який необхідно видалити;
+
+//=============================================================
+
+Властивість innerHTML зберігає вміст елемента, включно з тегами, у вигляді рядка. Значення, що повертається, - це завжди валідний HTML-код.
+
+const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
+const list = document.querySelector(".list");
+
+const markup = technologies
+  .map((technology) => `<li class="list-item">${technology}</li>`)
+  .join("");
+
+// Check the console, you'll see a single string with HTML tags
+console.log(markup);
+
+// Adding all the markup in one operation
+list.innerHTML = markup;
+
+//====================================================
+elem.insertAdjacentHTML(position, string);
+
+"beforebegin" - перед elem
+"afterbegin" - всередині elem, перед усіма дітьми
+"beforeend" - всередині elem, після усіх дітей
+"afterend" - після elem
